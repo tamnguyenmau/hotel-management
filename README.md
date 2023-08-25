@@ -29,9 +29,8 @@ Now register and login
 
 ### login page
 
-```sh
 == Staff Login ==
-
+```sh
 Email : Admin@gmail.com
 Password : 1234
 ```
