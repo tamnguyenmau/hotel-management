@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+    --bg-text-shadow: 0 2px 4px rgb(13 0 77 / 8%), 0 3px 6px rgb(13 0 77 / 8%), 0 8px 16px rgb(13 0 77 / 8%);
+    --bg-box-shadow:  rgba(179, 175, 175, 0.538) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    /* overflow: hidden; */
+}
+
+.carousel_section{
+    box-shadow: var(--bg-box-shadow);
+    width: 70% !important;
+}
+/* side photo css */
+section {
+    height: 100%;
+    width: 50%;
+}
+
+.carousel-image {
+    height: 100vh;
+    width: 100%;
+
+}
+
+.carousel-inner::after {
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(105, 83, 83, 0.284);
+}
+
+/* login css */
+
+.logo {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    margin:20px 0;
+}
+
+.logo .bluebirdlogo {
+    height: 100%;
+}
+
+.logo p {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: rgb(66, 68, 74);
+    text-shadow: var(--bg-text-shadow);
+}
+
+.auth_container {
+    height: 80%;
+    margin: 50px;
+}
+
+#Log_in {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.role_btn {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.role_btn .btns {
+    height: 40px;
+    width: 200px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgba(93, 102, 116, 0.318);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.role_btn .btns:hover{
+    background-image: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);
+    transition: ease-in-out;
+    color: white;
+}
+
+.btns.active{
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    color: white;
+}
+
+.authsection {
+    width: 70%;
+    margin: 10px;
+    display: none;
+    text-align: center;
+    animation: screen_animation .4s;
+}
+/* toggle display */
+.user_login.active{
+    display: block;
+}
+
+.employee_login.active{
+    display: block;
+}
+
+.form-floating {
+    margin: 15px 0;
+} 
+
+.auth_btn {
+    padding: 15px 30px;
+    border: unset;
+    border-radius: 15px;
+    background-color: rgba(118, 141, 176, 0.318);
+    z-index: 1;
+    position: relative;
+    font-size: 17px;
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.auth_btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    z-index: -1;
+    border-radius: 10px;
+    background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+    transition: all 250ms
+}
+
+.auth_btn:hover {
+    color: #ffffff;
+}
+
+.auth_btn:hover::before {
+    width: 100%;
+}
+
+.footer_line{
+    margin: 20px 0;
+}
+
+.page_move_btn{
+    color: rgba(13, 1, 58, 0.711);
+    cursor: pointer;
+}
+.page_move_btn:hover{
+    color: rgb(255, 149, 0);
+}
+
+/* signup */
+#sign_up{
+    height: 100%;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user_signup{
+    width: 70%;
+    text-align: center;
+    animation: screen_animation .4s;
+}
+
+/* animation frame */
+@keyframes screen_animation {
+    0%{
+        transform: translateX(50px);
+    }
+}
+
+
+
+/* responsive stuff */
+
+@media(max-width: 30rem){
+    .carousel_section{
+        display: none;
+    }
+    #auth_section{
+        width: 100%;
+    }
+    .auth_container
+    {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    #Log_in .role_btn .btns{
+        width: 90px;
+    }
+}
